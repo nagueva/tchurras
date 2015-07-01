@@ -1,7 +1,9 @@
+.DS_Store
 .tmp
+node_modules
 .sass-cache
 .sass-cache
 *.css.map
-node_modules
 dist
-.DS_Store
+app/assets
+tchurras.sublime-workspace
