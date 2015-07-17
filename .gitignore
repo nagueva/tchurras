@@ -6,4 +6,5 @@ node_modules
 *.css.map
 dist
 app/assets
-tchurras.sublime-workspace
+*.sublime-workspace
+*.sublime-project
