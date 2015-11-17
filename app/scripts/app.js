@@ -10,7 +10,7 @@ function calc(mn,wn){
   item['meat'] = (.350*mn)+(.250*wn);
   item['sausage'] = (.150*mn)+(.100*wn);
   item['bread'] = (3*mn)+(2*wn);
-  item['beer'] = (3*mn)+(1.5*wn);
+  item['beer'] = (1.5*mn)+(.700*wn);
   item['soda'] = (.500*mn)+(.750*wn);
   item['charcoal'] = (.300*mn)+(.250*wn);
   // item[''] = (*mn)+(*wn);
