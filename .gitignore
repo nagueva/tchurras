@@ -7,4 +7,3 @@ node_modules
 dist
 app/assets
 *.sublime-workspace
-*.sublime-project
