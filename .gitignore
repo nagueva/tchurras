@@ -7,3 +7,5 @@ node_modules
 dist
 app/assets
 *.sublime-workspace
+fabfile.py
+fabfile.pyc
