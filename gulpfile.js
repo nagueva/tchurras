@@ -1,0 +1,79 @@
+var gulp  = require('gulp'),
+  concat  = require('gulp-concat'),
+  uglify  = require('gulp-uglify'),
+  htmlmin = require('gulp-htmlmin'),
+  rimraf   = require('rimraf'),
+  sass    = require('gulp-sass'),
+  panini  = require('panini'),
+  browserSync = require('browser-sync').create();
+
+var project_url = 'tchurras.dev';
+
+function build_html(done){
+  gulp.src('./src/pages/**/*.html')
+    .pipe(panini({
+      root: './src/pages',
+      layouts: './src/layouts',
+      partials: './src/partials'
+    }))
+    .pipe(htmlmin({collapseWhitespace: false, removeComments: true}))
+    .pipe(gulp.dest('./dist'));
+  done();
+}
+function reset_html(done){
+  panini.refresh();
+  done();
+}
+function build_css(done){
+  gulp.src('./src/assets/css/*.scss')
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(gulp.dest('./dist/assets/css'))
+    .pipe(browserSync.stream());
+  done();
+}
+function build_js(done){
+  gulp.src('./src/assets/js/*.js')
+    .pipe(concat('app.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./dist/assets/js'))
+  done();
+}
+gulp.task('build:html', build_html);
+gulp.task('build:css', build_css);
+gulp.task('build:js', build_js);
+gulp.task('build', gulp.parallel(build_html, build_css, build_js));
+
+function clean(done){
+  rimraf('./dist',done);
+}
+gulp.task('clean', clean);
+
+function browser_sync(done){
+  browserSync.init({
+    proxy: project_url,
+    open:false,
+    logLevel: 'silent'
+  });
+  console.log('\033[1mAccess URL\033[0m: http://'+project_url+':3000');
+  done();
+}
+gulp.task('browser:sync', browser_sync);
+
+function watch(done){
+  gulp.watch('./src/pages/**/*.html')
+    .on('all', gulp.series(build_html, browserSync.reload));
+  gulp.watch('./src/{layouts,partials}/**/*.html')
+    .on('all', gulp.series(reset_html, build_html, browserSync.reload));
+  gulp.watch('./src/assets/css/*.scss', build_css);
+  gulp.watch('./src/assets/js/*.js')
+    .on('all', gulp.series(build_js, browserSync.reload));
+  done();
+}
+gulp.task('watch', watch);
+
+gulp.task('serve', gulp.series(
+  clean,
+  gulp.parallel(build_html, build_css, build_js),
+  watch,
+  browser_sync
+));

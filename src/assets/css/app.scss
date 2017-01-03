@@ -1,0 +1,19 @@
+/*That amazing CSS*/
+body{
+  cursor:default;
+  font:62.5% sans-serif;
+  font-size: 1.2em;
+  padding: 10px 30px;
+  background:#ffffcc;
+  h1 {
+    color:#333;
+    padding:0 0 20px;
+    border-bottom:#ccc 1px solid;
+  }
+  a{
+    color:#09f;
+  }
+  p:last-child{
+    color:#999;
+  }
+}
