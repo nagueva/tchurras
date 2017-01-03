@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/nagueva/tchurras/issues"
   },
-  "homepage": "https://github.com/nagueva/tchurras#readme",
+  "homepage": "http://tchurras.com/",
   "devDependencies": {
     "browser-sync": "^2.18.5",
     "gulp": "github:gulpjs/gulp#4.0",

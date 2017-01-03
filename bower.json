@@ -1,0 +1,21 @@
+{
+  "name": "tchurras",
+  "description": "Uma simpática calculadora de churrasco.",
+  "main": "main.js",
+  "authors": [
+    "Guilherme Nagüeva"
+  ],
+  "license": "WTFPL",
+  "homepage": "http://tchurras.com/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "^6.3.0"
+  }
+}
