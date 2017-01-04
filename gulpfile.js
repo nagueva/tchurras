@@ -35,13 +35,19 @@ function build_js(done){
   gulp.src('./src/assets/js/*.js')
     .pipe(concat('app.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('./dist/assets/js'))
+    .pipe(gulp.dest('./dist/assets/js'));
+  done();
+}
+function build_img(done){
+  gulp.src('./src/assets/img/*')
+    .pipe(gulp.dest('./dist/assets/img'));
   done();
 }
 gulp.task('build:html', build_html);
 gulp.task('build:css', build_css);
 gulp.task('build:js', build_js);
-gulp.task('build', gulp.parallel(build_html, build_css, build_js));
+gulp.task('build:img', build_img);
+gulp.task('build', gulp.parallel(build_html, build_css, build_js, build_img));
 
 function clean(done){
   rimraf('./dist',done);
@@ -67,13 +73,14 @@ function watch(done){
   gulp.watch('./src/assets/css/*.scss', build_css);
   gulp.watch('./src/assets/js/*.js')
     .on('all', gulp.series(build_js, browserSync.reload));
+  gulp.watch('./src/assets/img/*', build_img);
   done();
 }
 gulp.task('watch', watch);
 
 gulp.task('serve', gulp.series(
   clean,
-  gulp.parallel(build_html, build_css, build_js),
+  gulp.parallel(build_html, build_css, build_js, build_img),
   watch,
   browser_sync
 ));
