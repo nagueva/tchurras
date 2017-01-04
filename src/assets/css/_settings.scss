@@ -76,8 +76,8 @@ $print-transparent-backgrounds: true;
 
 $dark-brown: #383636;
 $brown: #7F6F66;
-$sepia: #FFF2BC;
-$orange: #E27C3E;
+$sepia: #FDF2C2; // FFF2BC
+$orange: #FF690B; // f56c11 - FF5A0B
 $red: #FF0200; // ????
 
 @include add-foundation-colors;
