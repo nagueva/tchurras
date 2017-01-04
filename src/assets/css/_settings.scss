@@ -69,10 +69,16 @@ $global-margin: 1rem;
 $global-padding: 1rem;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
-$global-radius: 0;
+$global-radius: 8px;
 $global-text-direction: ltr;
 $global-flexbox: false;
 $print-transparent-backgrounds: true;
+
+$dark-brown: #383636;
+$brown: #7F6F66;
+$sepia: #FFF2BC;
+$orange: #E27C3E;
+$red: #FF0200; // ????
 
 @include add-foundation-colors;
 
@@ -111,24 +117,24 @@ $print-transparent-backgrounds: true;
 // $header-color: inherit;
 // $header-lineheight: 1.4;
 // $header-margin-bottom: 0.5rem;
-// $header-styles: (
-//   small: (
-//     'h1': ('font-size': 24),
-//     'h2': ('font-size': 20),
-//     'h3': ('font-size': 19),
-//     'h4': ('font-size': 18),
-//     'h5': ('font-size': 17),
-//     'h6': ('font-size': 16),
-//   ),
-//   medium: (
-//     'h1': ('font-size': 48),
-//     'h2': ('font-size': 40),
-//     'h3': ('font-size': 31),
-//     'h4': ('font-size': 25),
-//     'h5': ('font-size': 20),
-//     'h6': ('font-size': 16),
-//   ),
-// );
+$header-styles: (
+  small: (
+    'h1': ('font-size': 24),
+    'h2': ('font-size': 9),
+    'h3': ('font-size': 19),
+    'h4': ('font-size': 18),
+    'h5': ('font-size': 17),
+    'h6': ('font-size': 16),
+  ),
+  medium: (
+    'h1': ('font-size': 48),
+    'h2': ('font-size': 18),
+    'h3': ('font-size': 31),
+    'h4': ('font-size': 25),
+    'h5': ('font-size': 20),
+    'h6': ('font-size': 16),
+  ),
+);
 // $header-text-rendering: optimizeLegibility;
 // $small-font-size: 80%;
 // $header-small-font-color: $medium-gray;
@@ -240,25 +246,25 @@ $print-transparent-backgrounds: true;
 // // 11. Button
 // // ----------
 
-// $button-padding: 0.85em 1em;
-// $button-margin: 0 0 $global-margin 0;
-// $button-fill: solid;
-// $button-background: $primary-color;
-// $button-background-hover: scale-color($button-background, $lightness: -15%);
-// $button-color: $white;
-// $button-color-alt: $black;
-// $button-radius: $global-radius;
-// $button-sizes: (
-//   tiny: 0.6rem,
-//   small: 0.75rem,
-//   default: 0.9rem,
-//   large: 1.25rem,
-// );
-// $button-palette: $foundation-palette;
-// $button-opacity-disabled: 0.25;
-// $button-background-hover-lightness: -20%;
-// $button-hollow-hover-lightness: -50%;
-// $button-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+$button-padding: 0.85em 1em;
+$button-margin: 0 0 $global-margin 0;
+$button-fill: solid;
+$button-background: $orange;
+$button-background-hover: scale-color($button-background, $lightness: -15%);
+$button-color: $sepia;
+$button-color-alt: $black;
+$button-radius: $global-radius;
+$button-sizes: (
+  tiny: 0.6rem,
+  small: 0.75rem,
+  default: 0.9rem,
+  large: 1.6rem,
+);
+$button-palette: $foundation-palette;
+$button-opacity-disabled: 0.25;
+$button-background-hover-lightness: -20%;
+$button-hollow-hover-lightness: -50%;
+$button-transition: background-color 0.25s ease-out, color 0.25s ease-out;
 
 // // 12. Button Group
 // // ----------------
