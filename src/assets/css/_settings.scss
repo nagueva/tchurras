@@ -73,12 +73,12 @@ $global-radius: 8px;
 $global-text-direction: ltr;
 $global-flexbox: false;
 $print-transparent-backgrounds: true;
-
+// Project colors
 $dark-brown: #383636;
 $brown: #7F6F66;
-$sepia: #FDF2C2; // FFF2BC
-$orange: #FF690B; // f56c11 - FF5A0B
-$red: #FF0200; // ????
+$sepia: #FDF2C2;
+$orange: #FF690B;
+$red: #FF0200;
 
 @include add-foundation-colors;
 
