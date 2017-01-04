@@ -27,7 +27,7 @@ body{
   background: -moz-linear-gradient(top, $brown 0%, $dark-brown 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, $brown 0%,$dark-brown 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, $brown 0%,$dark-brown 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$brown', endColorstr='$dark-brown',GradientType=0 ); /* IE6-9 */
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$brown', endColorstr='$dark-brown',GradientType=0 ); /* IE6-9 */
   min-height:100vh;
   border-top: $dark-brown 5px solid;
 }
@@ -35,7 +35,7 @@ body{
 1 - HEADER
 /***************************************/
 header{
-  padding: 20px 0;
+  padding: 0 0 20px;
   img{
   }
 }
@@ -44,19 +44,94 @@ header{
 /***************************************/
 #main{
   padding:20px 0;
-  min-height: 60vh;
+  min-height: 85vh;
   h2{
     border-bottom: $sepia 1px solid;
     color:$sepia;
     opacity:.5;
     padding-bottom: 10px;
+    margin-bottom: 20px;
   }
 }
-form{
+form#number-of{
   padding:20px 0;
+  label{
+    display:block;
+    width:100%;
+    padding-left: .5em;
+    text-transform: uppercase;
+    color: $sepia;
+    opacity:.5;
+    font-size: 1.2em;
+  }
+  .row .row{
+    margin:0 0 !important;
+  }
+  input{
+    width:100%;
+    border:0;
+    height:100px;
+    background: $dark-brown;
+    border-right: $brown 1px solid;
+    font-size:3.2em;
+    border-top-left-radius: $global-radius;
+    border-bottom-left-radius: $global-radius;
+    color: $sepia;
+    outline: 0;
+    letter-spacing: -.025em;
+    padding:20px;
+    &::-webkit-input-placeholder {
+      color: $brown;
+      opacity: .25;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      color: $brown;  
+    }
+    &::-moz-placeholder {  /* Firefox 19+ */
+      color: $brown;  
+    }
+    &:-ms-input-placeholder {  
+      color: $brown;  
+    }
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+    &:hover{
+      background:darken($dark-brown, 2%);
+      transition: $button-transition;
+    }
+    &:focus{
+      background:darken($dark-brown, 5%);
+      transition: $button-transition;
+    }
+  }
+  a.button{
+    width:100%;
+    margin: 0;
+    padding:0;
+    height:50px;
+    line-height: 50px;
+    border-radius:0;
+    background: $dark-brown;
+    color:$brown;
+    &:last-child{
+      border-top: $brown 1px solid;
+      border-bottom-right-radius: $global-radius;
+    }
+    &:first-child{
+      border-top-right-radius: $global-radius;
+    }
+    &:hover{
+      background:darken($dark-brown, 10%);
+      color: $sepia;
+    }
+  }
   button[type="submit"]{
     text-transform: uppercase;
     font-weight: bold;
+    margin-top: 50px;
   }
 }
 /****************************************

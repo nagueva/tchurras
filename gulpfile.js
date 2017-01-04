@@ -14,7 +14,8 @@ function build_html(done){
     .pipe(panini({
       root: './src/pages',
       layouts: './src/layouts',
-      partials: './src/partials'
+      partials: './src/partials',
+      data: './src/data'
     }))
     .pipe(htmlmin({collapseWhitespace: false, removeComments: true}))
     .pipe(gulp.dest('./dist'));
@@ -68,7 +69,7 @@ gulp.task('browser:sync', browser_sync);
 function watch(done){
   gulp.watch('./src/pages/**/*.html')
     .on('all', gulp.series(build_html, browserSync.reload));
-  gulp.watch('./src/{layouts,partials}/**/*.html')
+  gulp.watch('./src/{layouts,partials,data}/**/*')
     .on('all', gulp.series(reset_html, build_html, browserSync.reload));
   gulp.watch('./src/assets/css/*.scss', build_css);
   gulp.watch('./src/assets/js/*.js')
