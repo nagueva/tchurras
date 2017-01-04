@@ -1,9 +1,67 @@
+/*
+  0 - GENERAL
+    0.1 - IMPORT
+    0.2 - BASE ELEMENTS
+  1 - HEADER
+  2 - MAIN CONTENT
+  3 - FOOTER
+*/
+
+/****************************************
+0 - GENERAL
+/***************************************/
+/****************************************
+  0.1 - IMPORT
+/***************************************/
 @import 'settings';
 @import './bower_components/foundation-sites/scss/foundation';
 @import 'foundation';
+/****************************************
+  0.2 - BASE ELEMENTS
+/***************************************/
+html{background:$dark-brown}
 body{
   cursor:default;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7f6f66+0,383636+100 */
+  background: $dark-brown; /* Old browsers */
+  background: -moz-linear-gradient(top, $brown 0%, $dark-brown 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, $brown 0%,$dark-brown 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, $brown 0%,$dark-brown 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$brown', endColorstr='$dark-brown',GradientType=0 ); /* IE6-9 */
+  min-height:100vh;
+  border-top: $dark-brown 5px solid;
 }
-.columns{
-  background:#ff0;
+/****************************************
+1 - HEADER
+/***************************************/
+header{
+  padding: 20px 0;
+  img{
+  }
+}
+/****************************************
+2 - MAIN CONTENT
+/***************************************/
+#main{
+  padding:20px 0;
+  min-height: 60vh;
+  h2{
+    border-bottom: $sepia 1px solid;
+    color:$sepia;
+    opacity:.5;
+    padding-bottom: 10px;
+  }
+}
+form{
+  padding:20px 0;
+  button[type="submit"]{
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+/****************************************
+3 - FOOTER
+/***************************************/
+footer{
+  color: $brown;
 }
