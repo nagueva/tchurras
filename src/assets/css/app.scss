@@ -1,7 +1,8 @@
 /*
   0 - GENERAL
     0.1 - IMPORT
-    0.2 - BASE ELEMENTS
+    0.2 - MIXINS & VARIABLES
+    0.3 - BASE ELEMENTS
   1 - MAIN CONTENT
   2 - RESULTS
 */
@@ -16,7 +17,12 @@
 @import './bower_components/foundation-sites/scss/foundation';
 @import 'foundation';
 /****************************************
-  0.2 - BASE ELEMENTS
+  0.2 - MIXINS & VARIABLES
+/***************************************/
+$form-transition: margin-top .75s ease-out,
+  opacity .75s ease-out;
+/****************************************
+  0.3 - BASE ELEMENTS
 /***************************************/
 html{background:$dark-brown}
 body{
@@ -37,21 +43,28 @@ body{
     margin-bottom: 20px;
   }
 }
+#container{
+  overflow: hidden;
+  >.waiting{
+    opacity: 0;
+  }
+}
 footer{
+  margin:40px 0 0;
   color: $brown;
 }
 /****************************************
 1 - MAIN CONTENT
 /***************************************/
 #main{
-  padding:20px 0;
-  min-height: 85vh;
+  padding:0;
+  transition: $form-transition;
   header{
-    padding: 0 0 20px;
+    padding:20px 0;
   }
 }
 form#number-of{
-  padding:20px 0;
+  padding:20px 0 100px;
   label{
     display:block;
     width:100%;
@@ -134,26 +147,39 @@ form#number-of{
 3 - RESULTS
 /***************************************/
 #results{
+  transition: $form-transition;
+  &.waiting{
+    a.back{
+      margin-top: -65px;
+    }
+  }
   a.back{
     display:block;
     width: 65px;
-    height: 60px;
+    height: 65px;
+    position:absolute;
+    top:5px;
+    left:50%;
+    margin-top: 0;
+    margin-left: -30px;
     background: $dark-brown;
     color: $brown;
-    margin:0 auto 40px;
     font-size: 2.4em;
     font-weight: bold;
-    line-height: 60px;
-    transition: 0.25s ease-out;
+    line-height: 65px;
+    opacity: 1;
+    transition:
+      background .25s ease-out,
+      color .25s ease-out,
+      margin .5s ease-out .55s;
     &:hover{
       background:darken($dark-brown, 5%);
       color: $sepia;
-      line-height: 65px;
-      height: 65px;
     }
   }
   h2{
     opacity: 1;
+    margin-top: 100px;
     border-color: rgba($sepia, .5);
     #total{
       font-weight: bold;
