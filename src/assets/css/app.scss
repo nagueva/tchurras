@@ -44,7 +44,6 @@ footer{
 1 - MAIN CONTENT
 /***************************************/
 #main{
-  display: none;
   padding:20px 0;
   min-height: 85vh;
   header{
@@ -174,8 +173,19 @@ form#number-of{
       margin:0;
       background:rgba($dark-brown, .1);
       padding:10px 0;
+      position: relative;
       &:nth-of-type(odd){
         background:rgba($sepia, .2);
+      }
+      &.active{
+        color: rgba($sepia, .5);
+        .label:before{
+          content: ' ';
+          border-bottom: rgba($sepia, .5) 2px solid;
+          position: absolute;
+          width: calc(100% - 75px);
+          margin:17px 0 0 0;
+        }
       }
       .unity{
         font-weight: bold;
@@ -194,7 +204,7 @@ form#number-of{
           display: none;
         }
         &:hover{
-          background:$sepia;
+          background:lighten($sepia, 5%);
         }
         &.active{
           background:$sepia;

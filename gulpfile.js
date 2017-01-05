@@ -33,7 +33,10 @@ function build_css(done){
   done();
 }
 function build_js(done){
-  gulp.src('./src/assets/js/*.js')
+  gulp.src([
+    './bower_components/jquery/dist/jquery.min.js',
+    './src/assets/js/*.js',
+    ])
     .pipe(concat('app.js'))
     .pipe(uglify())
     .pipe(gulp.dest('./dist/assets/js'));
