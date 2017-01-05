@@ -2,9 +2,8 @@
   0 - GENERAL
     0.1 - IMPORT
     0.2 - BASE ELEMENTS
-  1 - HEADER
-  2 - MAIN CONTENT
-  3 - FOOTER
+  1 - MAIN CONTENT
+  2 - RESULTS
 */
 
 /****************************************
@@ -30,27 +29,26 @@ body{
   // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$brown', endColorstr='$dark-brown',GradientType=0 ); /* IE6-9 */
   min-height:100vh;
   border-top: $dark-brown 5px solid;
-}
-/****************************************
-1 - HEADER
-/***************************************/
-header{
-  padding: 0 0 20px;
-  img{
-  }
-}
-/****************************************
-2 - MAIN CONTENT
-/***************************************/
-#main{
-  padding:20px 0;
-  min-height: 85vh;
   h2{
     border-bottom: $sepia 1px solid;
     color:$sepia;
     opacity:.5;
     padding-bottom: 10px;
     margin-bottom: 20px;
+  }
+}
+footer{
+  color: $brown;
+}
+/****************************************
+1 - MAIN CONTENT
+/***************************************/
+#main{
+  display: none;
+  padding:20px 0;
+  min-height: 85vh;
+  header{
+    padding: 0 0 20px;
   }
 }
 form#number-of{
@@ -80,6 +78,7 @@ form#number-of{
     outline: 0;
     letter-spacing: -.025em;
     padding:20px;
+    transition: $button-transition;
     &::-webkit-input-placeholder {
       color: $brown;
       opacity: .25;
@@ -100,11 +99,9 @@ form#number-of{
     }
     &:hover{
       background:darken($dark-brown, 2%);
-      transition: $button-transition;
     }
     &:focus{
       background:darken($dark-brown, 5%);
-      transition: $button-transition;
     }
   }
   a.button{
@@ -135,8 +132,95 @@ form#number-of{
   }
 }
 /****************************************
-3 - FOOTER
+3 - RESULTS
 /***************************************/
-footer{
-  color: $brown;
+#results{
+  a.back{
+    display:block;
+    width: 65px;
+    height: 60px;
+    background: $dark-brown;
+    color: $brown;
+    margin:0 auto 40px;
+    font-size: 2.4em;
+    font-weight: bold;
+    line-height: 60px;
+    transition: 0.25s ease-out;
+    &:hover{
+      background:darken($dark-brown, 5%);
+      color: $sepia;
+      line-height: 65px;
+      height: 65px;
+    }
+  }
+  h2{
+    opacity: 1;
+    border-color: rgba($sepia, .5);
+    #total{
+      font-weight: bold;
+    }
+  }
+  .icons{
+    color: $sepia;
+    font-size: 1.2em;
+  }
+  #items{
+    margin:20px 0;
+    border-top: rgba($sepia, .5) 1px solid;
+    border-bottom: rgba($sepia, .25) 1px solid;
+    font-size: 1.4em;
+    color: $sepia;
+    .item{
+      margin:0;
+      background:rgba($dark-brown, .1);
+      padding:10px 0;
+      &:nth-of-type(odd){
+        background:rgba($sepia, .2);
+      }
+      .unity{
+        font-weight: bold;
+      }
+      .button.checkbox{
+        background:$white;
+        padding:0;
+        margin:0 0 0 10px;
+        border:0;
+        width: 30px;
+        height: 30px;;
+        border-radius: 5px;
+        img{
+          position: absolute;
+          margin:-7px 0 0 3px;
+          display: none;
+        }
+        &:hover{
+          background:$sepia;
+        }
+        &.active{
+          background:$sepia;
+          img{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  #options{
+    margin:40px 0;
+    .button{
+      text-transform: uppercase;
+      font-size: 1.2em;
+      font-weight: bold;
+      &.secondary{
+        font-weight: normal;
+        color:rgba($sepia, .5);
+      }
+    }
+  }
 }
+.bgy{
+  background:#ff0;
+}
+
+
+

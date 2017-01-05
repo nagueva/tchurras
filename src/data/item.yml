@@ -1,0 +1,18 @@
+- var: meat
+  label: Carne
+  unity: kg
+- var: sausage
+  label: Linguiça
+  unity: kg
+- var: bread
+  label: Pães
+  unity:
+- var: beer
+  label: Cerveja
+  unity: l
+- var: soda
+  label: Refrigerante
+  unity: l
+- var: charcoal
+  label: Carvão
+  unity: kg
