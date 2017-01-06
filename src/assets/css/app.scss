@@ -115,6 +115,9 @@ form#number-of{
     &:focus{
       background:darken($dark-brown, 5%);
     }
+    &:invalid{
+      color: $red;
+    }
   }
   a.button{
     width:100%;
@@ -141,6 +144,12 @@ form#number-of{
     text-transform: uppercase;
     font-weight: bold;
     margin-top: 50px;
+  }
+  #form-msgs{
+    margin:0 0 40px;
+    color: $dark-brown;
+    background:$sepia;
+    display: none;
   }
 }
 /****************************************
