@@ -52,6 +52,18 @@ body{
 footer{
   margin:40px 0 0;
   color: $brown;
+  p.author{
+    font-size: .8em;
+    opacity:.5;
+    padding:20px 0 0;
+    a{
+      color:$sepia;
+      opacity: .3;
+      &:hover{
+        opacity: 9;
+      }
+    }
+  }
 }
 /****************************************
 1 - MAIN CONTENT
@@ -160,6 +172,8 @@ form#number-of{
   &.waiting{
     a.back{
       margin-top: -65px;
+      transition:
+        margin .25s ease-out;
     }
   }
   a.back{
@@ -180,7 +194,7 @@ form#number-of{
     transition:
       background .25s ease-out,
       color .25s ease-out,
-      margin .5s ease-out .55s;
+      margin .5s ease-out .5s;
     &:hover{
       background:darken($dark-brown, 5%);
       color: $sepia;
@@ -218,7 +232,7 @@ form#number-of{
           content: ' ';
           border-bottom: rgba($sepia, .5) 2px solid;
           position: absolute;
-          width: calc(100% - 75px);
+          width: calc(100% - 60px);
           margin:17px 0 0 0;
         }
       }
@@ -262,9 +276,6 @@ form#number-of{
       }
     }
   }
-}
-.bgy{
-  background:#ff0;
 }
 
 

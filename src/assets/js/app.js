@@ -7,7 +7,8 @@ ms = [
   'skywalkers',
   'garotos',
   'manos',
-  'manolos'
+  'manolos',
+  'amigos'
 ];
 ws = [
   'mulheres',
@@ -15,7 +16,8 @@ ws = [
   'amigas',
   'garotas',
   'minas',
-  'lindas'
+  'lindas',
+  'amigas'
 ];
 errors = [
   'Opa, esse churrasco precisa ter pelo menos uma pessoa.',
@@ -71,9 +73,10 @@ function showErrors(code){
   target.focus();
 }
 function showResults(mn, wn){
+  window.history.pushState('new-url', 'Number of participants', '/#!m'+mn+'w'+wn);
   item['meat'] = (.350*mn)+(.250*wn);
   item['sausage'] = (.150*mn)+(.100*wn);
-  item['bread'] = (3*mn)+(2*wn);
+  item['bread'] = (2*mn)+(1*wn);
   item['beer'] = (1.5*mn)+(.700*wn);
   item['soda'] = (.500*mn)+(.750*wn);
   item['charcoal'] = (.300*mn)+(.250*wn);
@@ -100,6 +103,14 @@ var core = {
   init:function(){
     $('#men').focus();
     setHeight();
+    url = window.location.href.split('#!')[1];
+    if(url){
+      mn = url.replace('m','').split('w')[0];
+      wn = url.split('w')[1];
+      $('#men').val(mn);
+      $('#women').val(wn);
+      validate();
+    }
     $('#number-of .actions>a.plus').click(function(){
       input = $(this).attr('href');
       v = $(input).val() ? $(input).val() : 0;
@@ -119,7 +130,8 @@ var core = {
       return false;
     });
     $('#results .reset-form').click(function(){
-      moveTo('#main')
+      moveTo('#main');
+      window.history.pushState('reset-url', 'Original URL', '/');
       return false;
     });
     $('#items>.item>.unity>a.checkbox').click(function(){
