@@ -132,6 +132,9 @@ var core = {
     $('#results .reset-form').click(function(){
       moveTo('#main');
       window.history.pushState('reset-url', 'Original URL', '/');
+      $('#items>.item')
+        .add('#items>.item>.unity>a.checkbox')
+        .removeClass('active');
       return false;
     });
     $('#items>.item>.unity>a.checkbox').click(function(){
