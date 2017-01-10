@@ -508,10 +508,10 @@ $callout-border: 0; // $callout-border: 1px solid rgba($black, 0.25);
 // $reveal-width: 600px;
 // $reveal-max-width: $global-width;
 // $reveal-padding: $global-padding;
-// $reveal-border: 1px solid $medium-gray;
+$reveal-border: 12px solid $dark-brown;
 // $reveal-radius: $global-radius;
 // $reveal-zindex: 1005;
-// $reveal-overlay-background: rgba($black, 0.45);
+$reveal-overlay-background: rgba($orange, 0.75);
 
 // // 30. Slider
 // // ----------

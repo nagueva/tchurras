@@ -54,11 +54,11 @@ footer{
   color: $brown;
   p.author{
     font-size: .8em;
-    opacity:.5;
+    opacity:.7;
     padding:20px 0 0;
     a{
       color:$sepia;
-      opacity: .3;
+      opacity: .5;
       &:hover{
         opacity: 9;
       }
@@ -73,10 +73,21 @@ footer{
   transition: $form-transition;
   header{
     padding:20px 0;
+    @include breakpoint(small only) {
+      padding:10px 0;
+    }
+    img{
+      @include breakpoint(small only) {
+        width: 40%;
+      }
+    }
   }
 }
 form#number-of{
   padding:20px 0 100px;
+  @include breakpoint(small only) {
+    padding:10px 0;
+  }
   label{
     display:block;
     width:100%;
@@ -156,6 +167,9 @@ form#number-of{
     text-transform: uppercase;
     font-weight: bold;
     margin-top: 50px;
+    @include breakpoint(small only) {
+      margin-top: 30px
+    }
   }
   #form-msgs{
     margin:0 0 40px;
@@ -218,6 +232,9 @@ form#number-of{
     border-bottom: rgba($sepia, .25) 1px solid;
     font-size: 1.4em;
     color: $sepia;
+    @include breakpoint(small only) {
+      font-size: 1.2em;
+    }
     .item{
       margin:0;
       background:rgba($dark-brown, .1);
@@ -277,6 +294,23 @@ form#number-of{
     }
   }
 }
-
+#share{
+  outline: 0;
+  .close-button{
+    float: right;
+    font-size:1.6em;
+    cursor: pointer;
+  }
+  p.lead{
+    font-size: 1.4em;
+    color: $brown;
+  }
+  input#link{
+    display: block;
+    width: 100%;
+    padding:10px;
+    font-size: 1.6em;
+  }
+}
 
 

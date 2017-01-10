@@ -2,9 +2,10 @@ var gulp  = require('gulp'),
   concat  = require('gulp-concat'),
   uglify  = require('gulp-uglify'),
   htmlmin = require('gulp-htmlmin'),
-  rimraf   = require('rimraf'),
+  rimraf  = require('rimraf'),
   sass    = require('gulp-sass'),
   panini  = require('panini'),
+  babel   = require('gulp-babel'),
   browserSync = require('browser-sync').create();
 
 var project_url = 'tchurras.dev';
@@ -35,9 +36,17 @@ function build_css(done){
 function build_js(done){
   gulp.src([
     './bower_components/jquery/dist/jquery.min.js',
-    './src/assets/js/*.js',
+    './bower_components/foundation-sites/js/foundation.core.js',
+    './bower_components/foundation-sites/js/foundation.util.mediaQuery.js',
+    './bower_components/foundation-sites/js/foundation.util.keyboard.js',
+    './bower_components/foundation-sites/js/foundation.util.box.js',
+    './bower_components/foundation-sites/js/foundation.util.triggers.js',
+    './bower_components/foundation-sites/js/foundation.util.motion.js',
+    './bower_components/foundation-sites/js/foundation.reveal.js',
+    './src/assets/js/*.js'
     ])
     .pipe(concat('app.js'))
+    .pipe(babel())
     .pipe(uglify())
     .pipe(gulp.dest('./dist/assets/js'));
   done();

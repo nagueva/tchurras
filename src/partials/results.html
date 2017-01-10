@@ -30,10 +30,18 @@
             <a href="#main" class="button expanded secondary reset-form">Voltar</a>
           </div>
           <div class="columns small-12 medium-8">
-            <a href="#" class="button expanded">Compartilhar</a>
+            <a class="button expanded" data-open="share">Compartilhar</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section><!-- /#results -->
+
+<div class="reveal" id="share" data-reveal>
+  <button class="close-button" data-close aria-label="Fechar" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <p class="lead">Copie o link e envie para seus amigos</p>
+  <p><input type="url" class="large" value="http://tchurras.com" id="link"></p>
+</div>
