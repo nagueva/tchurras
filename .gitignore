@@ -2,6 +2,8 @@ bower_components/*
 node_modules/*
 dist/*
 *.sublime-workspace
+fabfile.py
+fabfile.pyc
 
 # OS generated files #
 ######################
