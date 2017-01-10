@@ -1,11 +1,16 @@
-# tchurras
+# Tchurras
+
 A simple calculator for your brazilian barbecue.
 
-[tchurras.com](http://tchurras.com/)
+Instaling:
 
-## Running locally
-**tchurras** uses [Bower](http://bower.io), [npm](https://www.npmjs.com/) and [Grunt](http://gruntjs.com/). 
+**Tchurras** uses [Gulp](http://gulpjs.com/) and [Bower](http://bower.io/). So:
 
-1. Install front-end dependencies with `bower install`
-2. Change to project's root folder and install its dependencies with `npm install`
-3. Run grunt: `grunt`
+1. run `npm install`
+2. run `bower install`
+
+Running:
+
+1. run `gulp serve`
+
+- [Gulp](http://gulpjs.com/)

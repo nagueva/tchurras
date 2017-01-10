@@ -1,0 +1,35 @@
+<section id="main">
+  <header>
+    <div class="row">
+      <div class="column small-12 medium-6 medium-offset-3">
+        <h1 class="text-center"><a href="/"><img src="/assets/img/logo-tchurras.svg" alt="Tchurras"></a></h1>
+      </div>
+    </div>
+  </header>
+  <div class="row">
+    <div class="column small-12 medium-6 medium-offset-3">
+      <h2 class="text-center">Quantas pessoas vão participar do churrasco?</h2>
+      <form id="number-of" action="/">
+        <div id="form-msgs" class="callout small text-center">
+        </div>
+        <div class="row">
+          {{#each people}}
+            <div class="columns">
+              <label for="{{this.var}}" class="text-left">{{this.label}}</label>
+              <div class="row collapse">
+                <div class="columns small-9 large-10 the-input">
+                  <input id="{{this.var}}" type="number" placeholder="0" min="0" max="999" step="1">
+                </div>
+                <div class="columns small-3 large-2 actions">
+                  <a href="#{{this.var}}" class="button plus">&#9650;</a>
+                  <a href="#{{this.var}}" class="button minus">&#9660;</a>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+        <button type="submit" class="button large expanded">Calcular</button>
+      </form>
+    </div>
+  </div>
+</section><!-- /#main -->

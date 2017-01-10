@@ -1,0 +1,47 @@
+<section id="results" class="waiting">
+  <a href="#main" class="back text-center reset-form">&#8634;</a>
+  <div class="row">
+    <div class="column small-12 medium-6 medium-offset-3 text-center">
+      <h2>Churrasco para <span id="total"></span> pessoas</h2>
+      <div class="row icons">
+        <div class="columns small-3 small-offset-2">
+          <img src="/assets/img/avatar-man-1.svg" width="75" alt="homens" title="18 homens" id="male-icon"> x <span id="total-men"></span>
+        </div>
+        <div class="columns small-3 small-offset-2">
+          <img src="/assets/img/avatar-woman-1.svg" width="75" alt="mulheres" title="18 mulheres" id="female-icon"> x <span id="total-women"></span>
+        </div>
+      </div>
+      <div id="items">
+        {{#each item}}
+          <div id="{{this.var}}" class="row item">
+            <div class="columns small-6 text-left label">{{this.label}}</div>
+            <div class="columns small-6 text-right unity">
+              <span class="value"></span> {{this.unity}}
+              <a href="#{{this.var}}" class="button checkbox">
+                <img src="/assets/img/icon-check.svg" alt="&#10003;">
+              </a>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+      <div id="options">
+        <div class="row">
+          <div class="columns medium-4 hide-for-small-only">
+            <a href="#main" class="button expanded secondary reset-form">Voltar</a>
+          </div>
+          <div class="columns small-12 medium-8">
+            <a class="button expanded" data-open="share">Compartilhar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- /#results -->
+
+<div class="reveal" id="share" data-reveal>
+  <button class="close-button" data-close aria-label="Fechar" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <p class="lead">Copie o link e envie para seus amigos</p>
+  <p><input type="url" class="large" value="http://tchurras.com" id="link"></p>
+</div>

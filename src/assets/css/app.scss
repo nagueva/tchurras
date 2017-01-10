@@ -1,0 +1,316 @@
+/*
+  0 - GENERAL
+    0.1 - IMPORT
+    0.2 - MIXINS & VARIABLES
+    0.3 - BASE ELEMENTS
+  1 - MAIN CONTENT
+  2 - RESULTS
+*/
+
+/****************************************
+0 - GENERAL
+/***************************************/
+/****************************************
+  0.1 - IMPORT
+/***************************************/
+@import 'settings';
+@import './bower_components/foundation-sites/scss/foundation';
+@import 'foundation';
+/****************************************
+  0.2 - MIXINS & VARIABLES
+/***************************************/
+$form-transition: margin-top .75s ease-out,
+  opacity .75s ease-out;
+/****************************************
+  0.3 - BASE ELEMENTS
+/***************************************/
+html{background:$dark-brown}
+body{
+  cursor:default;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7f6f66+0,383636+100 */
+  background: $dark-brown; /* Old browsers */
+  background: -moz-linear-gradient(top, $brown 0%, $dark-brown 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, $brown 0%,$dark-brown 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, $brown 0%,$dark-brown 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$brown', endColorstr='$dark-brown',GradientType=0 ); /* IE6-9 */
+  min-height:100vh;
+  border-top: $dark-brown 5px solid;
+  h2{
+    border-bottom: $sepia 1px solid;
+    color:$sepia;
+    opacity:.5;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+}
+#container{
+  overflow: hidden;
+  >.waiting{
+    opacity: 0;
+  }
+}
+footer{
+  margin:40px 0 0;
+  color: $brown;
+  p.author{
+    font-size: .8em;
+    opacity:.7;
+    padding:20px 0 0;
+    a{
+      color:$sepia;
+      opacity: .5;
+      &:hover{
+        opacity: 9;
+      }
+    }
+  }
+}
+/****************************************
+1 - MAIN CONTENT
+/***************************************/
+#main{
+  padding:0;
+  transition: $form-transition;
+  header{
+    padding:20px 0;
+    @include breakpoint(small only) {
+      padding:10px 0;
+    }
+    img{
+      @include breakpoint(small only) {
+        width: 40%;
+      }
+    }
+  }
+}
+form#number-of{
+  padding:20px 0 100px;
+  @include breakpoint(small only) {
+    padding:10px 0;
+  }
+  label{
+    display:block;
+    width:100%;
+    padding-left: .5em;
+    text-transform: uppercase;
+    color: $sepia;
+    opacity:.5;
+    font-size: 1.2em;
+  }
+  .row .row{
+    margin:0 0 !important;
+  }
+  input{
+    width:100%;
+    border:0;
+    height:100px;
+    background: $dark-brown;
+    border-right: $brown 1px solid;
+    font-size:3.2em;
+    border-top-left-radius: $global-radius;
+    border-bottom-left-radius: $global-radius;
+    color: $sepia;
+    outline: 0;
+    letter-spacing: -.025em;
+    padding:20px;
+    transition: $button-transition;
+    &::-webkit-input-placeholder {
+      color: $brown;
+      opacity: .25;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      color: $brown;  
+    }
+    &::-moz-placeholder {  /* Firefox 19+ */
+      color: $brown;  
+    }
+    &:-ms-input-placeholder {  
+      color: $brown;  
+    }
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+    &:hover{
+      background:darken($dark-brown, 2%);
+    }
+    &:focus{
+      background:darken($dark-brown, 5%);
+    }
+    &:invalid{
+      color: $red;
+    }
+  }
+  a.button{
+    width:100%;
+    margin: 0;
+    padding:0;
+    height:50px;
+    line-height: 50px;
+    border-radius:0;
+    background: $dark-brown;
+    color:$brown;
+    &:last-child{
+      border-top: $brown 1px solid;
+      border-bottom-right-radius: $global-radius;
+    }
+    &:first-child{
+      border-top-right-radius: $global-radius;
+    }
+    &:hover{
+      background:darken($dark-brown, 10%);
+      color: $sepia;
+    }
+  }
+  button[type="submit"]{
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 50px;
+    @include breakpoint(small only) {
+      margin-top: 30px
+    }
+  }
+  #form-msgs{
+    margin:0 0 40px;
+    color: $dark-brown;
+    background:$sepia;
+    display: none;
+  }
+}
+/****************************************
+3 - RESULTS
+/***************************************/
+#results{
+  transition: $form-transition;
+  &.waiting{
+    a.back{
+      margin-top: -65px;
+      transition:
+        margin .25s ease-out;
+    }
+  }
+  a.back{
+    display:block;
+    width: 65px;
+    height: 65px;
+    position:absolute;
+    top:5px;
+    left:50%;
+    margin-top: 0;
+    margin-left: -30px;
+    background: $dark-brown;
+    color: $brown;
+    font-size: 2.4em;
+    font-weight: bold;
+    line-height: 65px;
+    opacity: 1;
+    transition:
+      background .25s ease-out,
+      color .25s ease-out,
+      margin .5s ease-out .5s;
+    &:hover{
+      background:darken($dark-brown, 5%);
+      color: $sepia;
+    }
+  }
+  h2{
+    opacity: 1;
+    margin-top: 100px;
+    border-color: rgba($sepia, .5);
+    #total{
+      font-weight: bold;
+    }
+  }
+  .icons{
+    color: $sepia;
+    font-size: 1.2em;
+  }
+  #items{
+    margin:20px 0;
+    border-top: rgba($sepia, .5) 1px solid;
+    border-bottom: rgba($sepia, .25) 1px solid;
+    font-size: 1.4em;
+    color: $sepia;
+    @include breakpoint(small only) {
+      font-size: 1.2em;
+    }
+    .item{
+      margin:0;
+      background:rgba($dark-brown, .1);
+      padding:10px 0;
+      position: relative;
+      &:nth-of-type(odd){
+        background:rgba($sepia, .2);
+      }
+      &.active{
+        color: rgba($sepia, .5);
+        .label:before{
+          content: ' ';
+          border-bottom: rgba($sepia, .5) 2px solid;
+          position: absolute;
+          width: calc(100% - 70px);
+          margin:17px 0 0 0;
+        }
+      }
+      .unity{
+        font-weight: bold;
+      }
+      .button.checkbox{
+        background:$white;
+        padding:0;
+        margin:0 0 0 10px;
+        border:0;
+        width: 30px;
+        height: 30px;;
+        border-radius: 5px;
+        img{
+          position: absolute;
+          margin:-7px 0 0 3px;
+          display: none;
+        }
+        &:hover{
+          background:lighten($sepia, 5%);
+        }
+        &.active{
+          background:$sepia;
+          img{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  #options{
+    margin:40px 0;
+    .button{
+      text-transform: uppercase;
+      font-size: 1.2em;
+      font-weight: bold;
+      &.secondary{
+        font-weight: normal;
+        color:rgba($sepia, .5);
+      }
+    }
+  }
+}
+#share{
+  outline: 0;
+  .close-button{
+    float: right;
+    font-size:1.6em;
+    cursor: pointer;
+  }
+  p.lead{
+    font-size: 1.4em;
+    color: $brown;
+  }
+  input#link{
+    display: block;
+    width: 100%;
+    padding:10px;
+    font-size: 1.6em;
+  }
+}
+
+

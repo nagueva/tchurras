@@ -2,13 +2,12 @@
 	"folders":
 	[
 		{
-            "name": "tchurras",
-            "path": ".",
-            "folder_exclude_patterns":
-            [
-                "dist",
-                "node_modules"
-            ],
+			"path": ".",
+      "folder_exclude_patterns": [
+        "dist",
+        "node_modules",
+        "bower_components"
+      ]
 		}
 	]
 }

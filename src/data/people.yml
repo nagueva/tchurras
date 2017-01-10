@@ -1,0 +1,4 @@
+- var: men
+  label: Homens
+- var: women
+  label: Mulheres
