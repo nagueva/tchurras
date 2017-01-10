@@ -1,6 +1,6 @@
 # Tchurras
 
-- [tchurras.com](http://tchurras.com/)
+- [tchurras.co](http://tchurras.co/)
 
 A simple calculator for your brazilian barbecue. Based on [Mogli Starter Framework](https://github.com/nagueva/mogli)
 

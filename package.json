@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/nagueva/tchurras/issues"
   },
-  "homepage": "http://tchurras.com/",
+  "homepage": "http://tchurras.co/",
   "devDependencies": {
     "babel-preset-es2015": "^6.18.0",
     "browser-sync": "^2.18.5",
