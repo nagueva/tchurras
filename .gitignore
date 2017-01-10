@@ -2,6 +2,7 @@ bower_components/*
 node_modules/*
 dist/*
 *.sublime-workspace
+*.sublime-project
 fabfile.py
 fabfile.pyc
 
