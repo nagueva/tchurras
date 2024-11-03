@@ -1,0 +1,136 @@
+---
+import Layout from "../layouts/Layout.astro"
+import img_logo from '../assets/images/logo-tchurras.svg';
+import icon_check from '../assets/images/icon-check.svg';
+
+const items = [
+  {
+    var: "meat",
+    label: "Carne",
+    unity: "kg"
+  },
+  {
+    var: "sausage",
+    label: "Linguiça",
+    unity: "kg"
+  },
+  {
+    var: "bread",
+    label: "Pães",
+    unity: null
+  },
+  {
+    var: "beer",
+    label: "Cerveja",
+    unity: "l"
+  },
+  {
+    var: "soda",
+    label: "Refrigerante",
+    unity: "l"
+  },
+  {
+    var: "charcoal",
+    label: "Carvão",
+    unity: "kg"
+  }
+]
+---
+<Layout>
+	<div id="container">
+		<section id="main">
+			<header>
+				<div class="row">
+				<div class="column small-12 medium-6 medium-offset-3">
+					<h1 class="text-center"><a href="/"><img src={img_logo.src} alt="Tchurras.co"></a></h1>
+				</div>
+				</div>
+			</header>
+			<div class="row">
+				<div class="column small-12 medium-6 medium-offset-3">
+				<h2 class="text-center">Quantas pessoas vão participar do churrasco?</h2>
+				<form id="number-of" action="/">
+					<div id="form-msgs" class="callout small text-center">
+					</div>
+					<div class="row">
+						<div class="columns">
+							<label for="men" class="text-left">Homens</label>
+							<div class="row collapse">
+								<div class="columns small-9 large-10 the-input">
+								<input id="men" type="number" placeholder="0" min="0" max="999" step="1">
+								</div>
+								<div class="columns small-3 large-2 actions">
+								<a href="#men" class="button plus">&#9650;</a>
+								<a href="#men" class="button minus">&#9660;</a>
+								</div>
+							</div>
+						</div>
+						<div class="columns">
+							<label for="women" class="text-left">Mulheres</label>
+							<div class="row collapse">
+								<div class="columns small-9 large-10 the-input">
+								<input id="women" type="number" placeholder="0" min="0" max="999" step="1">
+								</div>
+								<div class="columns small-3 large-2 actions">
+								<a href="#women" class="button plus">&#9650;</a>
+								<a href="#women" class="button minus">&#9660;</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button type="submit" class="button large expanded">Calcular</button>
+				</form>
+				</div>
+			</div>
+			</section><!-- /#main -->
+
+			<section id="results" class="waiting">
+				<a href="#main" class="back text-center reset-form">&#8634;</a>
+				<div class="row">
+				<div class="column small-12 medium-6 medium-offset-3 text-center">
+					<h2>Churrasco para <span id="total"></span> pessoas</h2>
+					<div class="row icons">
+					<div class="columns small-3 small-offset-2">
+						<img src="/images/avatar-man-1.svg" width="75" alt="homens" title="18 homens" id="male-icon"> x <span id="total-men"></span>
+					</div>
+					<div class="columns small-3 small-offset-2">
+						<img src="/images/avatar-woman-1.svg" width="75" alt="mulheres" title="18 mulheres" id="female-icon"> x <span id="total-women"></span>
+					</div>
+					</div>
+					<div id="items">
+						{items.map((item) => (
+						<div id={item.var} class="row item">
+						<div class="columns small-6 text-left label">{item.label}</div>
+						<div class="columns small-6 text-right unity">
+							<span class="value"></span> {item.unity}
+							<a href={'#'+item.var} class="button checkbox">
+							<img src={icon_check.src} alt="&#10003;">
+							</a>
+						</div>
+						</div>
+						))}
+					</div>
+					<div id="options">
+					<div class="row">
+						<div class="columns medium-4 hide-for-small-only">
+						<a href="#main" class="button expanded secondary reset-form">Voltar</a>
+						</div>
+						<div class="columns small-12 medium-8">
+						<a class="button expanded" data-open="share">Compartilhar</a>
+						</div>
+					</div>
+					</div>
+				</div>
+				</div>
+			</section><!-- /#results -->
+			
+			<div class="reveal" id="share" data-reveal>
+				<button class="close-button" data-close aria-label="Fechar" type="button">
+				<span aria-hidden="true">&times;</span>
+				</button>
+				<p class="lead">Copie o link e envie para seus amigos</p>
+				<p><input type="url" class="large" value="http://tchurras.co" id="link"></p>
+			</div>
+
+	</div>
+  </Layout>

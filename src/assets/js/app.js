@@ -34,9 +34,9 @@ function setHeight() {
 }
 function randomIcons(){
   var n = Math.floor(Math.random()*18)+1;
-  $('#male-icon').attr('src', '/assets/img/avatar-man-'+n+'.svg');
+  $('#male-icon').attr('src', '/images/avatar-man-'+n+'.svg');
   var n = Math.floor(Math.random()*14)+1;
-  $('#female-icon').attr('src', '/assets/img/avatar-woman-'+n+'.svg');
+  $('#female-icon').attr('src', '/images/avatar-woman-'+n+'.svg');
 }
 function moveTo(target){
   if(target == '#results'){
