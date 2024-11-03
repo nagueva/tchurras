@@ -1,5 +1,7 @@
 # [Tchurras.co](http://tchurras.co)
 
+> **Important**: This is a side-project I built in 2016. I recently migrated it to [Astro](https://astro.build) to keep it alive but the code is still old - avoid reusing it.
+
 A simple calculator for your brazilian barbecue.
 
 ## 🧞 Commands
