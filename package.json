@@ -1,28 +1,17 @@
 {
-  "name": "tchurras",
-  "version": "2.0.0",
-  "description": "Uma simpática calculadora de churrasco.",
-  "main": "main.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nagueva/tchurras.git"
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "author": "Guilherme Nagüeva",
-  "license": "WTFPL",
-  "bugs": {
-    "url": "https://github.com/nagueva/tchurras/issues"
-  },
-  "homepage": "http://tchurras.co/",
-  "devDependencies": {
-    "babel-preset-es2015": "^6.18.0",
-    "browser-sync": "^2.18.5",
-    "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-babel": "^6.1.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-htmlmin": "^3.0.0",
-    "gulp-sass": "^3.0.0",
-    "gulp-uglify": "^2.0.0",
-    "panini": "^1.3.1",
-    "rimraf": "^2.5.4"
+  "dependencies": {
+    "astro": "^4.16.8",
+    "foundation-sites": "^6.9.0",
+    "sass": "^1.80.6"
   }
 }
